@@ -2,6 +2,8 @@
 
 These are my solutions to [Advent of Code](https://adventofcode.com) problems, written in TypeScript.
 
+![Test solutions](https://github.com/sunilbpandey/advent-of-code-ts/actions/workflows/tests.yml/badge.svg)
+
 ## 2022
 
 | :wavy_dash:      | :wavy_dash:      | :wavy_dash:      | :wavy_dash:      | :wavy_dash:      |
