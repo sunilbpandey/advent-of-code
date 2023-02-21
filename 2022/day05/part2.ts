@@ -1,7 +1,7 @@
 import { readInput } from "../../utils";
 import { loadStartingStacks, parseMove } from "./common";
 
-export const part2 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
   const stacks = loadStartingStacks(input);
 
@@ -11,7 +11,5 @@ export const part2 = async () => {
     const crates = stacks[from].splice(0, count);
     stacks[to].splice(0, 0, ...crates);
   });
-  console.log(stacks.map((stack) => stack[0]).join(""));
+  return stacks.map((stack) => stack[0]).join("");
 };
-
-(async () => part2())();

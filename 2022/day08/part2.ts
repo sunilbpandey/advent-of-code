@@ -36,7 +36,7 @@ const computeScenicScore = (grid: number[][], i: number, j: number) => {
   return score;
 };
 
-export const part2 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
   const grid = loadGrid(input);
 
@@ -47,7 +47,5 @@ export const part2 = async () => {
     }
   }
 
-  console.log(maxScore);
+  return maxScore.toString();
 };
-
-(async () => await part2())();

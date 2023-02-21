@@ -14,9 +14,7 @@ const getSectionPairs = (line: string) => {
 const fullyContains = ([l, r]: number[][]) =>
   l[0] >= r[0] && l[l.length - 1] <= r[r.length - 1];
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
-  console.log(input.map(getSectionPairs).filter(fullyContains).length);
+  return input.map(getSectionPairs).filter(fullyContains).length.toString();
 };
-
-(async () => await part1())();

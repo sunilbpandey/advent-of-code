@@ -1,7 +1,7 @@
 import { readInput } from "../../utils";
 import { getOutcomeScore, shapeScore } from "./common";
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   const score = input.reduce((score, line) => {
@@ -11,7 +11,5 @@ export const part1 = async () => {
     // plus the score for the outcome of the round
     return score + getOutcomeScore(opponent, self) + self;
   }, 0);
-  console.log(score);
+  return score.toString();
 };
-
-(async () => await part1())();

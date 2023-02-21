@@ -1,9 +1,7 @@
 import { readInput } from "../../utils";
 import { findMarker } from "./common";
 
-export const part2 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
-  console.log(findMarker(input[0], 14));
+  return findMarker(input[0], 14).toString();
 };
-
-(async () => await part2())();

@@ -20,7 +20,7 @@ const range = (end: number) => {
   return Array.from({ length: end }, (_, i) => i);
 };
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
   const grid = loadGrid(input);
 
@@ -55,9 +55,7 @@ export const part1 = async () => {
     );
   }
 
-  console.log(
-    visibility.reduce((total, row) => total + row.filter((v) => v).length, 0)
-  );
+  return visibility
+    .reduce((total, row) => total + row.filter((v) => v).length, 0)
+    .toString();
 };
-
-(async () => await part1())();

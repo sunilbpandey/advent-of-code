@@ -1,14 +1,11 @@
 import { readInput } from "../../utils";
 import { loadSizes } from "./common";
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
   const dirs = loadSizes(input);
-  console.log(
-    Object.values(dirs)
-      .filter((size) => size <= 100000)
-      .reduce((sum, cur) => sum + cur, 0)
-  );
+  return Object.values(dirs)
+    .filter((size) => size <= 100000)
+    .reduce((sum, cur) => sum + cur, 0)
+    .toString();
 };
-
-(async () => await part1())();

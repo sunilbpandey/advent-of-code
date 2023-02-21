@@ -7,7 +7,7 @@ const calculateSignalStrength = (cycle: number, x: number): number => {
   return 0;
 };
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   let x = 1;
@@ -22,7 +22,5 @@ export const part1 = async () => {
       x += parseInt(line.split(" ")[1]);
     }
   });
-  console.log(strength);
+  return strength.toString();
 };
-
-(async () => await part1())();

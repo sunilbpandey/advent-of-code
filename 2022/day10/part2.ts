@@ -23,7 +23,7 @@ const movePixel = (pixel: Pixel) => {
   }
 };
 
-export const part2 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   // Current position of the sprite
@@ -50,7 +50,5 @@ export const part2 = async () => {
       moveSprite(sprite, parseInt(line.split(" ")[1]));
     }
   });
-  console.log(crt.map((row) => row.join("")).join("\n"));
+  return crt.map((row) => row.join("")).join("\n");
 };
-
-(async () => await part2())();

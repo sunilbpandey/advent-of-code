@@ -1,6 +1,6 @@
 import { readInput } from "../../utils";
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
   let current = 0;
   let max = 0;
@@ -12,7 +12,5 @@ export const part1 = async () => {
       current += parseInt(line);
     }
   });
-  console.log(max);
+  return max.toString();
 };
-
-(async () => await part1())();

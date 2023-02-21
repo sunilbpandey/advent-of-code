@@ -1,7 +1,7 @@
 import { readInput } from "../../utils";
 import { moveKnot, Point } from "./common";
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
   const head: Point = { x: 0, y: 0 };
   const tail: Point = { x: 0, y: 0 };
@@ -32,7 +32,5 @@ export const part1 = async () => {
       visited.add(`${tail.x},${tail.y}`);
     }
   });
-  console.log(visited.size);
+  return visited.size.toString();
 };
-
-(async () => await part1())();

@@ -1,7 +1,7 @@
 import { readInput } from "../../utils";
 import { getItemPriority, getUniqueChars } from "./common";
 
-export const part2 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   let sum = 0;
@@ -20,7 +20,5 @@ export const part2 = async () => {
       sum += getItemPriority(badge);
     }
   }
-  console.log(sum);
+  return sum.toString();
 };
-
-(async () => part2())();

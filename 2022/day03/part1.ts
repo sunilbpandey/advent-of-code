@@ -1,7 +1,7 @@
 import { readInput } from "../../utils";
 import { getUniqueChars, getItemPriority } from "./common";
 
-export const part1 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   let sum = 0;
@@ -11,7 +11,5 @@ export const part1 = async () => {
     const shared = [...compartment2].filter((s) => compartment1.has(s));
     sum += shared.reduce((n, s) => n + getItemPriority(s), 0);
   });
-  console.log(sum);
+  return sum.toString();
 };
-
-(async () => part1())();

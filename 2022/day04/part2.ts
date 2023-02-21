@@ -13,9 +13,7 @@ const getSectionPairs = (line: string) => {
 // the second range's first element.
 const areOverlapping = ([l, r]: number[][]) => r[0] <= l[l.length - 1];
 
-export const part2 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
-  console.log(input.map(getSectionPairs).filter(areOverlapping).length);
+  return input.map(getSectionPairs).filter(areOverlapping).length.toString();
 };
-
-(async () => await part2())();

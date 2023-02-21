@@ -9,7 +9,7 @@ const makeChoice = (opponent: number, outcome: number) => {
   return choice;
 };
 
-export const part2 = async () => {
+export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   const score = input.reduce((score, line) => {
@@ -17,7 +17,5 @@ export const part2 = async () => {
     const self = makeChoice(opponent, outcome - 2);
     return score + getOutcomeScore(opponent, self) + self;
   }, 0);
-  console.log(score);
+  return score.toString();
 };
-
-(async () => part2())();
