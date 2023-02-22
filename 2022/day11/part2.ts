@@ -9,19 +9,28 @@ import { readInput } from "../../utils";
 
  To keep things manageable, we can use modular arithmetic.
 
- if a = b (mod n), then:
-    a + c = b + c (mod n)
-    and
-    a * c = b * c (mod n)
+ if x = a (mod n1), and
+    x = b (mod n2), and
+    x = c (mod n1 * n2)
+    where n1 and n2 are coprime,
+
+ then:
+    a + k1 * n1 = c + k3 * n1 * n2
+    c = a + n1 * (k1 - k3 * n2)
+    c = a (mod n1)
+
+ similarly:
+    c = b (mod n2)
+
+ This means, if we keep track of c, we can calculate a and b from it.
 
  Notice that every "Test" divides the worry level by a different prime number.
  So instead of keeping track of item worry levels, we just need to keep track
- of worry levels modulo each of these prime numbers.
-
+ of worry levels modulo the product of these prime numbers.
  */
 
 class Monkey {
-    items: number[][] = [];
+    items: number[] = [];
     updateWorryLevel: Function = () => {};
     divisor = 0;
     nextIfTrue = 0;
@@ -36,17 +45,14 @@ export const solve = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
     const monkeys: Monkey[] = [];
-
-    // We can read this from the file, but it's easier to just hardcode it
-    const divisors = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+    const divisors: number[] = [];
 
     let monkey = new Monkey();
     input.forEach((line) => {
         const parts = line.trim().split(":");
         switch(parts[0]) {
             case "Starting items":
-                const items = parts[1].trim().split(",").map(item => parseInt(item.trim()));
-                monkey.items = items.map(item => divisors.map((divisor) => item % divisor));
+                monkey.items = parts[1].trim().split(",").map(item => parseInt(item.trim()));
                 break;
 
             case "Operation":
@@ -55,6 +61,7 @@ export const solve = async (): Promise<string> => {
             
             case "Test":
                 monkey.divisor = parseInt(parts[1].trim().substring("divisible by ".length));
+                divisors.push(monkey.divisor);
 
             case "If true":
                 monkey.nextIfTrue = parseInt(parts[1].trim().substring("throw to monkey ".length));
@@ -74,16 +81,21 @@ export const solve = async (): Promise<string> => {
         monkeys.push(monkey);
     }
 
+    const product = divisors.reduce((a, b) => a * b, 1);
+    monkeys.forEach((monkey) => {
+        monkey.items.forEach((item, index) => {
+            monkey.items[index] = item % product;
+        });
+    });
+
     const inspections = Array(monkeys.length).fill(0);
 
     for (let round = 0; round < 10000; round++) {
         monkeys.forEach((monkey, index) => {
             monkey.items.forEach((item) => {
-                item.forEach((remainder, index) => {
-                    item[index] = monkey.updateWorryLevel(remainder) % divisors[index];
-                });
-                const nextMonkey = monkey.getNextMonkey(item[divisors.indexOf(monkey.divisor)]);
-                monkeys[nextMonkey].items.push(item);
+                const updatedWorryLevel = monkey.updateWorryLevel(item) % product;
+                const nextMonkey = monkey.getNextMonkey(updatedWorryLevel);
+                monkeys[nextMonkey].items.push(updatedWorryLevel);
             });
             inspections[index] += monkey.items.length;
             monkey.items = [];
