@@ -1,4 +1,5 @@
 # --- Day 11: Monkey in the Middle ---
+
 As you finally start making your way upriver, you realize your pack is much lighter than you remember. Just then, one of the items from your pack goes flying overhead. Monkeys are playing [Keep Away](https://en.wikipedia.org/wiki/Keep_away) with your missing things!
 
 To get your stuff back, you need to be able to predict where the monkeys will throw your items. After some careful observation, you realize the monkeys operate based on `how worried you are about each item`.
@@ -38,7 +39,7 @@ Monkey 3:
 Each monkey has several attributes:
 
 - Starting items lists your `worry level` for each item the monkey is currently holding in the order they will be inspected.
-- Operation shows how your worry level changes as that monkey inspects an item. (An operation like new = old * 5 means that your worry level after the monkey inspected the item is five times whatever your worry level was before inspection.)
+- Operation shows how your worry level changes as that monkey inspects an item. (An operation like new = old \* 5 means that your worry level after the monkey inspected the item is five times whatever your worry level was before inspection.)
 - Test shows how the monkey uses your worry level to decide where to throw an item next.
   - If true shows what happens with an item if the Test was true.
   - If false shows what happens with an item if the Test was false.
@@ -133,8 +134,8 @@ After round 1, the monkeys are holding items with these worry levels:
 ```
 Monkey 0: 20, 23, 27, 26
 Monkey 1: 2080, 25, 167, 207, 401, 1046
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 ```
 
 Monkeys 2 and 3 aren't holding any items at the end of the round; they both inspected items during the round and threw them all before the round ended.
@@ -145,72 +146,72 @@ This process continues for a few more rounds:
 After round 2, the monkeys are holding items with these worry levels:
 Monkey 0: 695, 10, 71, 135, 350
 Monkey 1: 43, 49, 58, 55, 362
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 3, the monkeys are holding items with these worry levels:
 Monkey 0: 16, 18, 21, 20, 122
 Monkey 1: 1468, 22, 150, 286, 739
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 4, the monkeys are holding items with these worry levels:
 Monkey 0: 491, 9, 52, 97, 248, 34
 Monkey 1: 39, 45, 43, 258
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 5, the monkeys are holding items with these worry levels:
 Monkey 0: 15, 17, 16, 88, 1037
 Monkey 1: 20, 110, 205, 524, 72
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 6, the monkeys are holding items with these worry levels:
 Monkey 0: 8, 70, 176, 26, 34
 Monkey 1: 481, 32, 36, 186, 2190
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 7, the monkeys are holding items with these worry levels:
 Monkey 0: 162, 12, 14, 64, 732, 17
 Monkey 1: 148, 372, 55, 72
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 8, the monkeys are holding items with these worry levels:
 Monkey 0: 51, 126, 20, 26, 136
 Monkey 1: 343, 26, 30, 1546, 36
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 9, the monkeys are holding items with these worry levels:
 Monkey 0: 116, 10, 12, 517, 14
 Monkey 1: 108, 267, 43, 55, 288
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 After round 10, the monkeys are holding items with these worry levels:
 Monkey 0: 91, 16, 20, 98
 Monkey 1: 481, 245, 22, 26, 1092, 30
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 ...
 
 After round 15, the monkeys are holding items with these worry levels:
 Monkey 0: 83, 44, 8, 184, 9, 20, 26, 102
 Monkey 1: 110, 36
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 
 ...
 
 After round 20, the monkeys are holding items with these worry levels:
 Monkey 0: 10, 12, 14, 26, 34
 Monkey 1: 245, 93, 53, 199, 115
-Monkey 2: 
-Monkey 3: 
+Monkey 2:
+Monkey 3:
 ```
 
 Chasing all of the monkeys at once is impossible; you're going to have to focus on the `two most active` monkeys if you want any hope of getting your stuff back. Count the `total number of times each monkey inspects items` over 20 rounds:
