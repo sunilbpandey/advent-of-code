@@ -86,7 +86,12 @@ export const loadGrid = async () => {
   return { grid, start, end };
 };
 
-export const updateDistances = (distances: number[][], visited: boolean[][], grid: number[][], start: Cell | undefined = undefined) => {
+export const updateDistances = (
+  distances: number[][],
+  visited: boolean[][],
+  grid: number[][],
+  start: Cell | undefined = undefined
+) => {
   while (true) {
     // Find the unvisited cell with the shortest distance to the end
     const u = findShortestDistanceUnvisitedCell(distances, visited);

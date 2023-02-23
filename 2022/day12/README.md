@@ -65,6 +65,7 @@ This path reaches the goal in only 29 steps, the fewest possible.
 `What is the fewest steps required to move starting from any square with elevation a to the location that should get the best signal?`
 
 # Solution
+
 A naive approach is to simply walk all paths from Start to End and see which path is the shortest. But this will not return an answer in a reasonable amount of time, simply because of the number of possible paths.
 
 Instead, we need to use [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm). For part 1, we can stop as soon as we visit the Start node; for part 2, we must visit all the nodes and then select the appropriate starting node.
