@@ -30,12 +30,12 @@ npm install
 
 ### Solve a specific day
 ```
-npm run --silent solve <YEAR> <DAY> <PART>
+npm start --silent <YEAR> <DAY> <PART>
 ```
 
 e.g.
 ```
-npm run --silent solve 2022 3 1
+npm start --silent 2022 3 1
 ```
 
 ### Run all tests
