@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "solve": "ts-node solve",
     "test": "jest"
   },
   "repository": {

@@ -21,3 +21,24 @@ These are my solutions to [Advent of Code](https://adventofcode.com) problems, w
 | 11 | [✓](2022/day11) |
 | 12 | [✓](2022/day12) |
 | 13 | [✓](2022/day13) |
+
+## Usage
+### Install dependencies
+```
+npm install
+```
+
+### Solve a specific day
+```
+npm run --silent solve <YEAR> <DAY> <PART>
+```
+
+e.g.
+```
+npm run --silent solve 2022 3 1
+```
+
+### Run all tests
+```
+npm test
+```
