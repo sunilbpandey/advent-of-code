@@ -1,5 +1,5 @@
 {
-  "name": "advent-of-code-ts",
+  "name": "advent-of-code",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sunilbpandey/advent-of-code-ts.git"
+    "url": "git@github.com:sunilbpandey/advent-of-code.git"
   },
   "keywords": [],
   "author": "Sunil Pandey",
