@@ -2,7 +2,7 @@
 
 These are my solutions to [Advent of Code](https://adventofcode.com) problems.
 
-![Test solutions](https://github.com/sunilbpandey/advent-of-code/actions/workflows/tests.yml/badge.svg)
+![TypeScript](https://github.com/sunilbpandey/advent-of-code/actions/workflows/ts.yml/badge.svg)
 
 ## Progress
 

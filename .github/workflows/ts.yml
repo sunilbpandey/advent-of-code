@@ -1,4 +1,4 @@
-name: Test solutions
+name: TypeScript
 on: push
 
 jobs:
