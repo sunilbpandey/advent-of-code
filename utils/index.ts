@@ -1,1 +1,1 @@
-export { readInput } from "./readInput";
+export { readInput } from "./ts/readInput";
