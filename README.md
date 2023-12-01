@@ -1,6 +1,6 @@
 # Advent of Code
 
-These are my solutions to [Advent of Code](https://adventofcode.com) problems, written in TypeScript.
+These are my solutions to [Advent of Code](https://adventofcode.com) problems.
 
 ![Test solutions](https://github.com/sunilbpandey/advent-of-code-ts/actions/workflows/tests.yml/badge.svg)
 
