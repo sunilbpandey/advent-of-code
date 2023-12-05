@@ -2,8 +2,8 @@ package strutils
 
 import "strings"
 
-func ForEachLine(content string, f func(string)) {
-	for _, line := range strings.Split(content, "\n") {
-		f(line)
+func ForEachLine(content string, f func(int, string)) {
+	for linenum, line := range strings.Split(content, "\n") {
+		f(linenum, line)
 	}
 }

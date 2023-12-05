@@ -8,7 +8,7 @@ import (
 
 func Part2() string {
 	sum := 0
-	strutils.ForEachLine(content, func(line string) {
+	strutils.ForEachLine(content, func(_ int, line string) {
 		if len(line) == 0 {
 			return
 		}

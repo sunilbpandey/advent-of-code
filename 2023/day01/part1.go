@@ -20,7 +20,7 @@ func setDigits(d1, d2 *int, value int) {
 
 func Part1() string {
 	sum := 0
-	strutils.ForEachLine(content, func(line string) {
+	strutils.ForEachLine(content, func(_ int, line string) {
 		d1, d2 := -1, -1
 		for _, c := range line {
 			if unicode.IsDigit(c) {

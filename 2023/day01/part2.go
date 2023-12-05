@@ -11,7 +11,7 @@ import (
 func Part2() string {
 	names := []string{"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
 	sum := 0
-	strutils.ForEachLine(content, func(line string) {
+	strutils.ForEachLine(content, func(_ int, line string) {
 		d1, d2 := -1, -1
 		for i, c := range line {
 			if unicode.IsDigit(c) {
