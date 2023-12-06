@@ -5,6 +5,9 @@ import (
 	"testing"
 
 	"github.com/sunilbpandey/advent-of-code/2023/day01"
+	"github.com/sunilbpandey/advent-of-code/2023/day02"
+	"github.com/sunilbpandey/advent-of-code/2023/day03"
+	"github.com/sunilbpandey/advent-of-code/2023/day04"
 )
 
 type ProblemFunc func() string
@@ -16,6 +19,9 @@ type Problem struct {
 
 var problems = map[int][]Problem{
 	1: {{day01.Part1, "55172"}, {day01.Part2, "54925"}},
+	2: {{day02.Part1, "2268"}, {day02.Part2, "63542"}},
+	3: {{day03.Part1, "535235"}, {day03.Part2, "79844424"}},
+	4: {{day04.Part1, "24706"}, {day04.Part2, "13114317"}},
 }
 
 func TestProblems(t *testing.T) {
