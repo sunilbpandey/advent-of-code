@@ -8,15 +8,16 @@ import (
 	"strings"
 
 	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
+	"github.com/sunilbpandey/advent-of-code/utils/go/strutils"
 )
 
 //go:embed input.txt
 var content string
 
 func parseLine(line string) []int {
-	parts := strings.Split(line, ":")
+	_, data := strutils.Split2(line, ":")
 	nums := []int{}
-	for _, num := range regexp.MustCompile(`\s+`).Split(strings.TrimSpace(parts[1]), -1) {
+	for _, num := range regexp.MustCompile(`\s+`).Split(strings.TrimSpace(data), -1) {
 		nums = append(nums, intutils.Atoi(num))
 	}
 	return nums
@@ -54,14 +55,13 @@ func Part1() string {
 }
 
 func parseLinePart2(line string) int {
-	parts := strings.Split(line, ":")
-	return intutils.Atoi(regexp.MustCompile(`\s+`).ReplaceAllString(parts[1], ""))
+	_, data := strutils.Split2(line, ":")
+	return intutils.Atoi(regexp.MustCompile(`\s+`).ReplaceAllString(data, ""))
 }
 
 func Part2() string {
 	lines := strings.Split(content, "\n")
 	time := parseLinePart2(lines[0])
 	distance := parseLinePart2(lines[1])
-
 	return strconv.Itoa(countWays(time, distance))
 }

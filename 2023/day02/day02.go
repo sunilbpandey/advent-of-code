@@ -13,19 +13,18 @@ import (
 var content string
 
 func parseLine(line string) (string, []map[string]int) {
-	lineParts := strings.Split(line, ": ")
+	gameInfo, gameData := strutils.Split2(line, ": ")
 
 	sets := []map[string]int{}
-	for _, set := range strings.Split(lineParts[1], "; ") {
+	for _, set := range strings.Split(gameData, "; ") {
 		s := map[string]int{}
 		for _, cube := range strings.Split(set, ", ") {
-			parts := strings.SplitN(cube, " ", 2)
-			count, color := intutils.Atoi(parts[0]), parts[1]
-			s[color] = count
+			count, color := strutils.Split2(cube, " ")
+			s[color] = intutils.Atoi(count)
 		}
 		sets = append(sets, s)
 	}
-	return strings.Split(lineParts[0], " ")[1], sets
+	return strings.Split(gameInfo, " ")[1], sets
 }
 
 func Part1() string {
@@ -37,9 +36,6 @@ func Part1() string {
 
 	sum := 0
 	strutils.ForEachLine(content, func(_ int, line string) {
-		if len(line) == 0 {
-			return
-		}
 		possible := true
 
 		id, sets := parseLine(line)
@@ -60,10 +56,6 @@ func Part1() string {
 func Part2() string {
 	sum := 0
 	strutils.ForEachLine(content, func(_ int, line string) {
-		if len(line) == 0 {
-			return
-		}
-
 		maxPerColor := map[string]int{
 			"red":   0,
 			"green": 0,

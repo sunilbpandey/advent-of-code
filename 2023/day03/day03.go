@@ -45,10 +45,6 @@ func Part1() string {
 	prev := make(map[int]string)
 
 	strutils.ForEachLine(content, func(_ int, line string) {
-		if len(line) == 0 {
-			return
-		}
-
 		curr := make(map[int]string)
 		number := ""
 		for i, c := range line {
@@ -114,10 +110,6 @@ func Part2() string {
 	gears := make(map[string][]int)
 	prev := make(map[int]string)
 	strutils.ForEachLine(content, func(linenum int, line string) {
-		if len(line) == 0 {
-			return
-		}
-
 		curr := make(map[int]string)
 		number := ""
 		for i, c := range line {

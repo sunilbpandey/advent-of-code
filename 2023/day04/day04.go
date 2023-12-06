@@ -2,6 +2,7 @@ package day04
 
 import (
 	_ "embed"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -14,11 +15,7 @@ var content string
 
 func parseWinningNumbers(text string) map[string]bool {
 	winningNumbers := map[string]bool{}
-	for _, number := range strings.Split(text, " ") {
-		number = strings.TrimSpace(number)
-		if number == "" {
-			continue
-		}
+	for _, number := range regexp.MustCompile(`\s+`).Split(text, -1) {
 		winningNumbers[number] = true
 	}
 	return winningNumbers
@@ -26,11 +23,7 @@ func parseWinningNumbers(text string) map[string]bool {
 
 func countNumbersWon(winningNumbers map[string]bool, text string) int {
 	count := 0
-	for _, number := range strings.Split(text, " ") {
-		number = strings.TrimSpace(number)
-		if number == "" {
-			continue
-		}
+	for _, number := range regexp.MustCompile(`\s+`).Split(strings.TrimSpace(text), -1) {
 		if winningNumbers[number] {
 			count++
 		}
@@ -41,16 +34,9 @@ func countNumbersWon(winningNumbers map[string]bool, text string) int {
 func Part1() string {
 	sum := 0
 	strutils.ForEachLine(content, func(_ int, line string) {
-		if len(line) == 0 {
-			return
-		}
-
-		lineParts := strings.Split(line, ": ")
-
-		numberParts := strings.Split(lineParts[1], " | ")
-		winningNumbers := parseWinningNumbers(numberParts[0])
-		count := countNumbersWon(winningNumbers, numberParts[1])
-
+		_, cardData := strutils.Split2(line, ": ")
+		winningNumbers, haveNumbers := strutils.Split2(cardData, " | ")
+		count := countNumbersWon(parseWinningNumbers(winningNumbers), haveNumbers)
 		if count > 0 {
 			sum += intutils.Pow(2, count-1)
 		}
@@ -62,21 +48,16 @@ func Part2() string {
 	total := 0
 	cardsWon := []int{}
 	strutils.ForEachLine(content, func(_ int, line string) {
-		if len(line) == 0 {
-			return
-		}
-
 		copies := 1
 		if len(cardsWon) > 0 {
 			copies += cardsWon[0]
 			cardsWon = cardsWon[1:]
 		}
 
-		lineParts := strings.Split(line, ": ")
+		_, cardData := strutils.Split2(line, ": ")
 
-		numberParts := strings.Split(lineParts[1], " | ")
-		winningNumbers := parseWinningNumbers(numberParts[0])
-		count := countNumbersWon(winningNumbers, numberParts[1])
+		winningNumbers, haveNumbers := strutils.Split2(cardData, " | ")
+		count := countNumbersWon(parseWinningNumbers(winningNumbers), haveNumbers)
 
 		for i := 0; i < len(cardsWon) && count > 0; i++ {
 			cardsWon[i] += copies
