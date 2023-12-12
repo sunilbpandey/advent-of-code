@@ -12,6 +12,7 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day06"
 	"github.com/sunilbpandey/advent-of-code/2023/day07"
 	"github.com/sunilbpandey/advent-of-code/2023/day08"
+	"github.com/sunilbpandey/advent-of-code/2023/day09"
 	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
 )
 
@@ -26,6 +27,7 @@ var problems = map[int]map[int]ProblemFunc{
 	6: {1: day06.Part1, 2: day06.Part2},
 	7: {1: day07.Part1, 2: day07.Part2},
 	8: {1: day08.Part1},
+	9: {1: day09.Part1, 2: day09.Part2},
 }
 
 func main() {
