@@ -13,6 +13,7 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day07"
 	"github.com/sunilbpandey/advent-of-code/2023/day08"
 	"github.com/sunilbpandey/advent-of-code/2023/day09"
+	"github.com/sunilbpandey/advent-of-code/2023/day10"
 )
 
 type ProblemFunc func() string
@@ -23,15 +24,16 @@ type Problem struct {
 }
 
 var problems = map[int][]Problem{
-	1: {{day01.Part1, "55172"}, {day01.Part2, "54925"}},
-	2: {{day02.Part1, "2268"}, {day02.Part2, "63542"}},
-	3: {{day03.Part1, "535235"}, {day03.Part2, "79844424"}},
-	4: {{day04.Part1, "24706"}, {day04.Part2, "13114317"}},
-	5: {{day05.Part1, "579439039"}, {day05.Part2, "7873084"}},
-	6: {{day06.Part1, "2374848"}, {day06.Part2, "39132886"}},
-	7: {{day07.Part1, "248569531"}, {day07.Part2, "250382098"}},
-	8: {{day08.Part1, "13019"}},
-	9: {{day09.Part1, "1641934234"}, {day09.Part2, "975"}},
+	1:  {{day01.Part1, "55172"}, {day01.Part2, "54925"}},
+	2:  {{day02.Part1, "2268"}, {day02.Part2, "63542"}},
+	3:  {{day03.Part1, "535235"}, {day03.Part2, "79844424"}},
+	4:  {{day04.Part1, "24706"}, {day04.Part2, "13114317"}},
+	5:  {{day05.Part1, "579439039"}, {day05.Part2, "7873084"}},
+	6:  {{day06.Part1, "2374848"}, {day06.Part2, "39132886"}},
+	7:  {{day07.Part1, "248569531"}, {day07.Part2, "250382098"}},
+	8:  {{day08.Part1, "13019"}},
+	9:  {{day09.Part1, "1641934234"}, {day09.Part2, "975"}},
+	10: {{day10.Part1, "6773"}},
 }
 
 func TestProblems(t *testing.T) {

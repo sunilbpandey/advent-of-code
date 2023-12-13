@@ -13,21 +13,23 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day07"
 	"github.com/sunilbpandey/advent-of-code/2023/day08"
 	"github.com/sunilbpandey/advent-of-code/2023/day09"
+	"github.com/sunilbpandey/advent-of-code/2023/day10"
 	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
 )
 
 type ProblemFunc func() string
 
 var problems = map[int]map[int]ProblemFunc{
-	1: {1: day01.Part1, 2: day01.Part2},
-	2: {1: day02.Part1, 2: day02.Part2},
-	3: {1: day03.Part1, 2: day03.Part2},
-	4: {1: day04.Part1, 2: day04.Part2},
-	5: {1: day05.Part1, 2: day05.Part2},
-	6: {1: day06.Part1, 2: day06.Part2},
-	7: {1: day07.Part1, 2: day07.Part2},
-	8: {1: day08.Part1},
-	9: {1: day09.Part1, 2: day09.Part2},
+	1:  {1: day01.Part1, 2: day01.Part2},
+	2:  {1: day02.Part1, 2: day02.Part2},
+	3:  {1: day03.Part1, 2: day03.Part2},
+	4:  {1: day04.Part1, 2: day04.Part2},
+	5:  {1: day05.Part1, 2: day05.Part2},
+	6:  {1: day06.Part1, 2: day06.Part2},
+	7:  {1: day07.Part1, 2: day07.Part2},
+	8:  {1: day08.Part1},
+	9:  {1: day09.Part1, 2: day09.Part2},
+	10: {1: day10.Part1},
 }
 
 func main() {
