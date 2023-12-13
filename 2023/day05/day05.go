@@ -49,7 +49,7 @@ func Part1() string {
 	seeds := make(map[int]int)
 
 	lines := []string{}
-	strutils.ForEachLine(content, func(linenum int, line string) {
+	strutils.ForEachLine(content, true, func(linenum int, line string) {
 		if linenum == 0 {
 			for _, s := range strings.Split(strings.Split(line, ": ")[1], " ") {
 				n := intutils.Atoi(s)
@@ -138,7 +138,7 @@ func Part2() string {
 	seeds := make(map[Range]Range)
 
 	lines := []string{}
-	strutils.ForEachLine(content, func(linenum int, line string) {
+	strutils.ForEachLine(content, true, func(linenum int, line string) {
 		if linenum == 0 {
 			numbers := strings.Split(strings.Split(line, ": ")[1], " ")
 			for i := 0; i < len(numbers); i += 2 {

@@ -32,7 +32,7 @@ func parseLine(line string) (Hand, int) {
 func Part1() string {
 	bids := make(map[Hand]int)
 	hands := []Hand{}
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		hand, bid := parseLine(line)
 		bids[hand] = bid
 		hands = append(hands, hand)
@@ -49,7 +49,7 @@ func Part1() string {
 func Part2() string {
 	bids := make(map[Hand]int)
 	hands := []Hand{}
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		hand, bid := parseLine(line)
 		bids[hand] = bid
 		hands = append(hands, hand)

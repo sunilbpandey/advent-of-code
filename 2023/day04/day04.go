@@ -33,7 +33,7 @@ func countNumbersWon(winningNumbers map[string]bool, text string) int {
 
 func Part1() string {
 	sum := 0
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		_, cardData := strutils.Split2(line, ": ")
 		winningNumbers, haveNumbers := strutils.Split2(cardData, " | ")
 		count := countNumbersWon(parseWinningNumbers(winningNumbers), haveNumbers)
@@ -47,7 +47,7 @@ func Part1() string {
 func Part2() string {
 	total := 0
 	cardsWon := []int{}
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		copies := 1
 		if len(cardsWon) > 0 {
 			copies += cardsWon[0]

@@ -35,7 +35,7 @@ func Part1() string {
 	}
 
 	sum := 0
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		possible := true
 
 		id, sets := parseLine(line)
@@ -55,7 +55,7 @@ func Part1() string {
 
 func Part2() string {
 	sum := 0
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		maxPerColor := map[string]int{
 			"red":   0,
 			"green": 0,

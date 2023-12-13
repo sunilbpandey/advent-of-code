@@ -19,7 +19,7 @@ type Move struct {
 func parseContent() (string, map[string]Move) {
 	var instructions string
 	nodes := make(map[string]Move)
-	strutils.ForEachLine(content, func(linenum int, line string) {
+	strutils.ForEachLine(content, true, func(linenum int, line string) {
 		if linenum == 0 {
 			instructions = line
 			return

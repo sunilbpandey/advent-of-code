@@ -55,7 +55,7 @@ func findPrev(nums []int) int {
 
 func Part1() string {
 	sum := 0
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		sum += findNext(parseLine(line))
 	})
 	return strconv.Itoa(sum)
@@ -63,7 +63,7 @@ func Part1() string {
 
 func Part2() string {
 	sum := 0
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		sum += findPrev(parseLine(line))
 	})
 	return strconv.Itoa(sum)

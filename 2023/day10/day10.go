@@ -112,7 +112,7 @@ func detectLoop(g Grid, start *Cell) {
 func Part1() string {
 	var grid Grid
 	var start *Cell
-	strutils.ForEachLine(content, func(r int, line string) {
+	strutils.ForEachLine(content, true, func(r int, line string) {
 		row := []*Cell{}
 		for c, char := range line {
 			var cell *Cell

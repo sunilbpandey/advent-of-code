@@ -44,7 +44,7 @@ func Part1() string {
 	sum := 0
 	prev := make(map[int]string)
 
-	strutils.ForEachLine(content, func(_ int, line string) {
+	strutils.ForEachLine(content, true, func(_ int, line string) {
 		curr := make(map[int]string)
 		number := ""
 		for i, c := range line {
@@ -109,7 +109,7 @@ func findOverlappingGears(linenum, index int, number string, prev map[int]string
 func Part2() string {
 	gears := make(map[string][]int)
 	prev := make(map[int]string)
-	strutils.ForEachLine(content, func(linenum int, line string) {
+	strutils.ForEachLine(content, true, func(linenum int, line string) {
 		curr := make(map[int]string)
 		number := ""
 		for i, c := range line {
