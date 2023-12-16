@@ -18,10 +18,12 @@ These are my solutions to [Advent of Code](https://adventofcode.com) problems.
 | 07 | [⭑⭑](2022/day07) | [⭑⭑](2023/day07) |
 | 08 | [⭑⭑](2022/day08) | [⭑ ](2023/day08) |
 | 09 | [⭑⭑](2022/day09) | [⭑⭑](2023/day09) |
-| 10 | [⭑⭑](2022/day10) | [⭑ ](2023/day10) |
+| 10 | [⭑⭑](2022/day10) | [⭑⭑](2023/day10) |
 | 11 | [⭑⭑](2022/day11) | |
 | 12 | [⭑⭑](2022/day12) | |
 | 13 | [⭑⭑](2022/day13) | [⭑⭑](2023/day13) |
+| 14 | | |
+| 15 | | [⭑⭑](2023/day15) |
 
 ## Usage
 ### Install dependencies
