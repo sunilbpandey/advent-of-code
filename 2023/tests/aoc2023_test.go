@@ -15,6 +15,7 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day09"
 	"github.com/sunilbpandey/advent-of-code/2023/day10"
 	"github.com/sunilbpandey/advent-of-code/2023/day13"
+	"github.com/sunilbpandey/advent-of-code/2023/day15"
 )
 
 type ProblemFunc func() string
@@ -36,6 +37,7 @@ var problems = map[int][]Problem{
 	9:  {{day09.Part1, "1641934234"}, {day09.Part2, "975"}},
 	10: {{day10.Part1, "6773"}, {day10.Part2, "493"}},
 	13: {{day13.Part1, "29213"}, {day13.Part2, "37453"}},
+	15: {{day15.Part1, "510273"}, {day15.Part2, "212449"}},
 }
 
 func TestProblems(t *testing.T) {
