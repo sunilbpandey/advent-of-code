@@ -2,7 +2,6 @@ package day16
 
 import (
 	_ "embed"
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -10,93 +9,9 @@ import (
 //go:embed input.txt
 var content string
 
-type Beam struct {
-	Row, Col int
-	Dir      rune
-}
-
-func (b Beam) String() string {
-	return fmt.Sprintf("%d,%d,%c", b.Row, b.Col, b.Dir)
-}
-
-func (b Beam) MoveUp() Beam {
-	return Beam{b.Row - 1, b.Col, 'U'}
-}
-
-func (b Beam) MoveDown() Beam {
-	return Beam{b.Row + 1, b.Col, 'D'}
-}
-
-func (b Beam) MoveLeft() Beam {
-	return Beam{b.Row, b.Col - 1, 'L'}
-}
-
-func (b Beam) MoveRight() Beam {
-	return Beam{b.Row, b.Col + 1, 'R'}
-}
-
-func (b Beam) Move(tile rune) []Beam {
-	var updated []Beam
-	switch tile {
-	case '|':
-		if b.Dir == 'R' || b.Dir == 'L' {
-			updated = []Beam{b.MoveUp(), b.MoveDown()}
-		} else if b.Dir == 'D' {
-			updated = []Beam{b.MoveDown()}
-		} else {
-			updated = []Beam{b.MoveUp()}
-		}
-	case '-':
-		if b.Dir == 'U' || b.Dir == 'D' {
-			updated = []Beam{b.MoveLeft(), b.MoveRight()}
-		} else if b.Dir == 'R' {
-			updated = []Beam{b.MoveRight()}
-		} else {
-			updated = []Beam{b.MoveLeft()}
-		}
-	case '/':
-		if b.Dir == 'U' {
-			updated = []Beam{b.MoveRight()}
-		} else if b.Dir == 'D' {
-			updated = []Beam{b.MoveLeft()}
-		} else if b.Dir == 'L' {
-			updated = []Beam{b.MoveDown()}
-		} else {
-			updated = []Beam{b.MoveUp()}
-		}
-	case '\\':
-		if b.Dir == 'U' {
-			updated = []Beam{b.MoveLeft()}
-		} else if b.Dir == 'D' {
-			updated = []Beam{b.MoveRight()}
-		} else if b.Dir == 'L' {
-			updated = []Beam{b.MoveUp()}
-		} else {
-			updated = []Beam{b.MoveDown()}
-		}
-	default:
-		if b.Dir == 'R' {
-			updated = []Beam{b.MoveRight()}
-		} else if b.Dir == 'D' {
-			updated = []Beam{b.MoveDown()}
-		} else if b.Dir == 'L' {
-			updated = []Beam{b.MoveLeft()}
-		} else {
-			updated = []Beam{b.MoveUp()}
-		}
-	}
-	return updated
-}
-
-func Part1() string {
-	grid := strings.Split(content, "\n")
-	if grid[len(grid)-1] == "" {
-		grid = grid[:len(grid)-1]
-	}
-
+func countEnergizedTiles(grid []string, beams []Beam) int {
 	seen := make(map[string]bool)
 	energized := make(map[int]map[int]bool)
-	beams := []Beam{{0, 0, 'R'}}
 	for len(beams) > 0 {
 		updated := []Beam{}
 		for _, beam := range beams {
@@ -119,9 +34,40 @@ func Part1() string {
 		beams = updated
 	}
 
-	energizedCount := 0
+	count := 0
 	for _, row := range energized {
-		energizedCount += len(row)
+		count += len(row)
 	}
-	return strconv.Itoa(energizedCount)
+	return count
+}
+
+func Part1() string {
+	grid := strings.Split(content, "\n")
+	if grid[len(grid)-1] == "" {
+		grid = grid[:len(grid)-1]
+	}
+
+	return strconv.Itoa(countEnergizedTiles(grid, []Beam{{0, 0, 'R'}}))
+}
+
+func Part2() string {
+	grid := strings.Split(content, "\n")
+	if grid[len(grid)-1] == "" {
+		grid = grid[:len(grid)-1]
+	}
+
+	count := 0
+	for row := 0; row < len(grid); row++ {
+		count = max(
+			count,
+			countEnergizedTiles(grid, []Beam{{row, 0, 'R'}}),
+			countEnergizedTiles(grid, []Beam{{row, len(grid[0]) - 1, 'L'}}))
+	}
+	for col := 0; col < len(grid[0]); col++ {
+		count = max(
+			count,
+			countEnergizedTiles(grid, []Beam{{0, col, 'D'}}),
+			countEnergizedTiles(grid, []Beam{{len(grid) - 1, col, 'U'}}))
+	}
+	return strconv.Itoa(count)
 }
