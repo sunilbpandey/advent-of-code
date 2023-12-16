@@ -30,7 +30,7 @@ var problems = map[int]map[int]ProblemFunc{
 	7:  {1: day07.Part1, 2: day07.Part2},
 	8:  {1: day08.Part1},
 	9:  {1: day09.Part1, 2: day09.Part2},
-	10: {1: day10.Part1},
+	10: {1: day10.Part1, 2: day10.Part2},
 	13: {1: day13.Part1, 2: day13.Part2},
 }
 

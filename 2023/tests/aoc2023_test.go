@@ -34,7 +34,7 @@ var problems = map[int][]Problem{
 	7:  {{day07.Part1, "248569531"}, {day07.Part2, "250382098"}},
 	8:  {{day08.Part1, "13019"}},
 	9:  {{day09.Part1, "1641934234"}, {day09.Part2, "975"}},
-	10: {{day10.Part1, "6773"}},
+	10: {{day10.Part1, "6773"}, {day10.Part2, "493"}},
 	13: {{day13.Part1, "29213"}, {day13.Part2, "37453"}},
 }
 
