@@ -1,0 +1,27 @@
+package dayNN
+
+import (
+	_ "embed"
+	"strconv"
+
+	"github.com/sunilbpandey/advent-of-code/utils/go/strutils"
+)
+
+//go:embed input.txt
+var content string
+
+func Part1() string {
+	strutils.ForEachLine(content, false, func(linenum int, line string) {
+		// TODO: Implement
+	})
+
+	return strconv.Itoa(0)
+}
+
+func Part2() string {
+	strutils.ForEachLine(content, false, func(linenum int, line string) {
+		// TODO: Implement
+	})
+
+	return strconv.Itoa(0)
+}
