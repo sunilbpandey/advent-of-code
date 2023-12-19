@@ -8,23 +8,24 @@ import (
 
 	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
 	"github.com/sunilbpandey/advent-of-code/utils/go/strutils"
+	"github.com/sunilbpandey/go-toolkit/set"
 )
 
 //go:embed input.txt
 var content string
 
-func parseWinningNumbers(text string) map[string]bool {
-	winningNumbers := map[string]bool{}
+func parseWinningNumbers(text string) set.Set[string] {
+	winningNumbers := set.Set[string]{}
 	for _, number := range regexp.MustCompile(`\s+`).Split(text, -1) {
-		winningNumbers[number] = true
+		winningNumbers.Add(number)
 	}
 	return winningNumbers
 }
 
-func countNumbersWon(winningNumbers map[string]bool, text string) int {
+func countNumbersWon(winningNumbers set.Set[string], text string) int {
 	count := 0
 	for _, number := range regexp.MustCompile(`\s+`).Split(strings.TrimSpace(text), -1) {
-		if winningNumbers[number] {
+		if winningNumbers.Contains(number) {
 			count++
 		}
 	}

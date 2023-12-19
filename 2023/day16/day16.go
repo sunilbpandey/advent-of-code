@@ -4,13 +4,15 @@ import (
 	_ "embed"
 	"strconv"
 	"strings"
+
+	"github.com/sunilbpandey/go-toolkit/set"
 )
 
 //go:embed input.txt
 var content string
 
 func countEnergizedTiles(grid []string, beams []Beam) int {
-	seen := make(map[string]bool)
+	seen := set.NewSet[string]()
 	energized := make(map[int]map[int]bool)
 	for len(beams) > 0 {
 		updated := []Beam{}
@@ -20,10 +22,10 @@ func countEnergizedTiles(grid []string, beams []Beam) int {
 			}
 
 			key := beam.String()
-			if _, exists := seen[key]; exists {
+			if seen.Contains(key) {
 				continue
 			}
-			seen[key] = true
+			seen.Add(key)
 
 			if _, exists := energized[beam.Row]; !exists {
 				energized[beam.Row] = make(map[int]bool)
