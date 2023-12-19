@@ -1,4 +1,4 @@
-import { solve } from "../solve";
+import { solve } from "../../solve";
 
 const solutions = [
   { day: 1, part: 1, solution: "67016" },
@@ -42,7 +42,7 @@ describe("Advent of Code 2022", () => {
   test.each(solutions)(
     "Day $day Part $part",
     async ({ day, part, solution }) => {
-      const result = await solve(day, part);
+      const result = await solve(2022, day, part);
       expect(result).toBe(solution);
     }
   );

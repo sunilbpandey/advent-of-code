@@ -1,10 +1,8 @@
-(async () => {
-  const args = process.argv.slice(2);
-  if (args.length !== 3) {
-    console.log("Usage: npx ts-node solve.ts <year> <day> <part>");
-    process.exit(1);
+export const solve = async (year: number, day: number, part: number): Promise<string> => {
+  try {
+    const { solve } = await import(`./${year.toString()}/day${day.toString().padStart(2, "0")}/part${part}`);
+    return await solve();
+  } catch {
+    return "Not implemented yet";
   }
-
-  const { solve } = await import(`./${args[0]}/solve`);
-  console.log(await solve(args[1], args[2]));
-})();
+};
