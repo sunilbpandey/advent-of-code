@@ -17,12 +17,11 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day13"
 	"github.com/sunilbpandey/advent-of-code/2023/day15"
 	"github.com/sunilbpandey/advent-of-code/2023/day16"
+	"github.com/sunilbpandey/advent-of-code/utils/go/types"
 )
 
-type ProblemFunc func() string
-
 type Problem struct {
-	Func   ProblemFunc
+	Func   types.ProblemFunc
 	Answer string
 }
 
