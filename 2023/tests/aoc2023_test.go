@@ -15,6 +15,7 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day09"
 	"github.com/sunilbpandey/advent-of-code/2023/day10"
 	"github.com/sunilbpandey/advent-of-code/2023/day13"
+	"github.com/sunilbpandey/advent-of-code/2023/day14"
 	"github.com/sunilbpandey/advent-of-code/2023/day15"
 	"github.com/sunilbpandey/advent-of-code/2023/day16"
 	"github.com/sunilbpandey/advent-of-code/utils/go/types"
@@ -37,6 +38,7 @@ var problems = map[int][]Problem{
 	9:  {{day09.Part1, "1641934234"}, {day09.Part2, "975"}},
 	10: {{day10.Part1, "6773"}, {day10.Part2, "493"}},
 	13: {{day13.Part1, "29213"}, {day13.Part2, "37453"}},
+	14: {{day14.Part1, "108935"}, {day14.Part2, "100876"}},
 	15: {{day15.Part1, "510273"}, {day15.Part2, "212449"}},
 	16: {{day16.Part1, "6883"}, {day16.Part2, "7228"}},
 }

@@ -22,7 +22,7 @@ These are my solutions to [Advent of Code](https://adventofcode.com) problems.
 | 11 | [⭑⭑](2022/day11) | |
 | 12 | [⭑⭑](2022/day12) | |
 | 13 | [⭑⭑](2022/day13) | [⭑⭑](2023/day13) |
-| 14 | | |
+| 14 | [⭑⭑](2022/day14) | [⭑⭑](2023/day14) |
 | 15 | | [⭑⭑](2023/day15) |
 | 16 | | [⭑⭑](2023/day16) |
 
