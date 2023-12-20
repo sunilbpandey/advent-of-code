@@ -27,22 +27,37 @@ These are my solutions to [Advent of Code](https://adventofcode.com) problems.
 | 16 | | [⭑⭑](2023/day16) |
 
 ## Usage
+### Install Just
+Refer to [Just Programmer's Manual](https://just.systems/man/en/).
+
 ### Install dependencies
 ```
-npm install
+just setup
 ```
 
 ### Solve a specific day
+#### Go
 ```
-npm start --silent <YEAR> <DAY> <PART>
-```
-
-e.g.
-```
-npm start --silent 2022 3 1
+just go <YEAR> <DAY> <PART>
 ```
 
-### Run all tests
+#### TypeScript
 ```
-npm test
+just ts <YEAR> <DAY> <PART>
+```
+
+### Run tests
+#### Go
+```
+just test-go
+```
+
+#### TypeScript
+```
+just test-ts
+```
+
+#### All tests
+```
+just test
 ```
