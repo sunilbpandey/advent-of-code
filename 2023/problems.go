@@ -16,6 +16,7 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day15"
 	"github.com/sunilbpandey/advent-of-code/2023/day16"
 	"github.com/sunilbpandey/advent-of-code/2023/day18"
+	"github.com/sunilbpandey/advent-of-code/2023/day21"
 	"github.com/sunilbpandey/advent-of-code/utils/go/types"
 )
 
@@ -37,4 +38,5 @@ var Problems = map[int]map[int]types.ProblemFunc{
 	15: {1: day15.Part1, 2: day15.Part2},
 	16: {1: day16.Part1, 2: day16.Part2},
 	18: {1: day18.Part1, 2: day18.Part2},
+	21: {1: day21.Part1},
 }

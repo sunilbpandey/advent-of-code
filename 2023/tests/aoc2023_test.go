@@ -19,6 +19,7 @@ import (
 	"github.com/sunilbpandey/advent-of-code/2023/day15"
 	"github.com/sunilbpandey/advent-of-code/2023/day16"
 	"github.com/sunilbpandey/advent-of-code/2023/day18"
+	"github.com/sunilbpandey/advent-of-code/2023/day21"
 	"github.com/sunilbpandey/advent-of-code/utils/go/types"
 )
 
@@ -43,6 +44,7 @@ var problems = map[int][]Problem{
 	15: {{day15.Part1, "510273"}, {day15.Part2, "212449"}},
 	16: {{day16.Part1, "6883"}, {day16.Part2, "7228"}},
 	18: {{day18.Part1, "42317"}, {day18.Part2, "83605563360288"}},
+	21: {{day21.Part1, "3716"}},
 }
 
 func TestProblems(t *testing.T) {
