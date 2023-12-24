@@ -5,27 +5,13 @@ import (
 	"strconv"
 
 	"github.com/sunilbpandey/advent-of-code/utils/go/strutils"
+	"github.com/sunilbpandey/go-toolkit/point"
 )
 
 //go:embed input.txt
 var content string
 
-type Point struct {
-	X, Y int
-}
-
-func (p Point) Distance(q Point) int {
-	return abs(p.X-q.X) + abs(p.Y-q.Y)
-}
-
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
-func parseGalaxies(expansion int) []Point {
+func parseGalaxies(expansion int) []point.Point {
 	universe := [][]bool{}
 	var colContainsGalaxy []bool
 	rowContainsGalaxy := []bool{}
@@ -46,7 +32,7 @@ func parseGalaxies(expansion int) []Point {
 		universe = append(universe, row)
 	})
 
-	galaxies := []Point{}
+	galaxies := []point.Point{}
 	rowsAdded := 0
 	for row := range universe {
 		if !rowContainsGalaxy[row] {
@@ -60,7 +46,7 @@ func parseGalaxies(expansion int) []Point {
 				continue
 			}
 			if universe[row][col] {
-				galaxies = append(galaxies, Point{row + rowsAdded, col + colsAdded})
+				galaxies = append(galaxies, point.NewPoint(row+rowsAdded, col+colsAdded))
 			}
 		}
 	}

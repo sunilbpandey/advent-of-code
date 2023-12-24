@@ -5,8 +5,8 @@ import (
 	"os"
 
 	year2023 "github.com/sunilbpandey/advent-of-code/2023"
-	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
 	"github.com/sunilbpandey/advent-of-code/utils/go/types"
+	"github.com/sunilbpandey/go-toolkit/intutils"
 )
 
 var years = map[string]map[int]map[int]types.ProblemFunc{

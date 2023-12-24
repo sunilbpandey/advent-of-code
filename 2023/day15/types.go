@@ -3,7 +3,7 @@ package day15
 import (
 	"slices"
 
-	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
+	"github.com/sunilbpandey/go-toolkit/intutils"
 )
 
 type Lens struct {

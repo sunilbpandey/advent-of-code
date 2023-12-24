@@ -8,8 +8,8 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
 	"github.com/sunilbpandey/advent-of-code/utils/go/strutils"
+	"github.com/sunilbpandey/go-toolkit/intutils"
 )
 
 //go:embed input.txt

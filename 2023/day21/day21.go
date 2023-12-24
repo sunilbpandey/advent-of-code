@@ -5,24 +5,21 @@ import (
 	"strconv"
 
 	"github.com/sunilbpandey/advent-of-code/utils/go/strutils"
+	"github.com/sunilbpandey/go-toolkit/point"
 	"github.com/sunilbpandey/go-toolkit/set"
 )
 
 //go:embed input.txt
 var content string
 
-type Point struct {
-	X, Y int
-}
-
-func parseGrid() ([][]rune, Point) {
+func parseGrid() ([][]rune, point.Point) {
 	grid := [][]rune{}
-	var start Point
+	var start point.Point
 	strutils.ForEachLine(content, true, func(linenum int, line string) {
 		row := []rune{}
 		for col, ch := range line {
 			if ch == 'S' {
-				start = Point{linenum, col}
+				start = point.NewPoint(linenum, col)
 				ch = '.'
 			}
 			row = append(row, ch)
@@ -34,12 +31,17 @@ func parseGrid() ([][]rune, Point) {
 
 func Part1() string {
 	grid, start := parseGrid()
-	tiles := set.NewSet[Point](start)
+	tiles := set.NewSet[point.Point](start)
 
 	for steps := 0; steps < 64; steps++ {
-		updated := set.NewSet[Point]()
+		updated := set.NewSet[point.Point]()
 		for _, t := range tiles.Members() {
-			destinations := []Point{{t.X + 1, t.Y}, {t.X - 1, t.Y}, {t.X, t.Y + 1}, {t.X, t.Y - 1}}
+			destinations := []point.Point{
+				point.NewPoint(t.X+1, t.Y),
+				point.NewPoint(t.X-1, t.Y),
+				point.NewPoint(t.X, t.Y+1),
+				point.NewPoint(t.X, t.Y-1),
+			}
 			for _, d := range destinations {
 				if d.X < 0 || d.X >= len(grid) || d.Y < 0 || d.Y >= len(grid[0]) || grid[d.X][d.Y] == '#' {
 					continue

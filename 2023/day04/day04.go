@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/sunilbpandey/advent-of-code/utils/go/intutils"
 	"github.com/sunilbpandey/advent-of-code/utils/go/strutils"
+	"github.com/sunilbpandey/go-toolkit/intutils"
 	"github.com/sunilbpandey/go-toolkit/set"
 )
 
