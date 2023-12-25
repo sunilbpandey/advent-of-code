@@ -3,6 +3,8 @@ import { solve } from "../../solve";
 const solutions = [
   { day: 1, part: 1, solution: "1233" },
   { day: 1, part: 2, solution: "1275" },
+  { day: 2, part: 1, solution: "1989265" },
+  { day: 2, part: 2, solution: "2089174012" },
 ];
 
 describe("Advent of Code 2021", () => {
