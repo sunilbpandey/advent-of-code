@@ -1,0 +1,56 @@
+# Advent of Code
+
+These are my solutions to [Advent of Code](https://adventofcode.com) problems.
+
+![Go](https://github.com/sunilbpandey/advent-of-code/actions/workflows/go.yml/badge.svg)
+![TypeScript](https://github.com/sunilbpandey/advent-of-code/actions/workflows/ts.yml/badge.svg)
+
+## Progress
+
+{{PROGRESS}}
+
+## Usage
+
+### Install Just
+
+Refer to [Just Programmer's Manual](https://just.systems/man/en/).
+
+### Install dependencies
+
+```
+just setup
+```
+
+### Solve a specific day
+
+#### Go
+
+```
+just go <YEAR> <DAY> <PART>
+```
+
+#### TypeScript
+
+```
+just ts <YEAR> <DAY> <PART>
+```
+
+### Run tests
+
+#### Go
+
+```
+just test-go
+```
+
+#### TypeScript
+
+```
+just test-ts
+```
+
+#### All tests
+
+```
+just test
+```
