@@ -1,6 +1,22 @@
 import { readInput } from "../../utils";
 
-export const solve = async (): Promise<string> => {
+export const part1 = async (): Promise<string> => {
+  const input = await readInput(__dirname);
+
+  let previous: number;
+  let measurementIncreases = 0;
+  input.forEach((line) => {
+    const depth = parseInt(line);
+    if (previous < depth) {
+      measurementIncreases++;
+    }
+    previous = depth;
+  });
+
+  return measurementIncreases.toString();
+};
+
+export const part2 = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   // There is no need to compute the sum. We just need to compare the number being

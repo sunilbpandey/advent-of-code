@@ -1,5 +1,30 @@
 import { readInput } from "../../utils";
-import { findMostCommonBits } from "./common";
+
+// Given a list of bit strings, return the most common bit at each position.
+const findMostCommonBits = (input: string[]): string[] => {
+  // Count the number of 1s in each position
+  // At the end, if the value at a position is greater than half the length of the initial array,
+  // there were more 1s, otherwise there were more 0s.
+  const countOfOnes: number[] = new Array(input[0].length).fill(0);
+  input.forEach((line) => {
+    line.split("").forEach((c, i) => {
+      countOfOnes[i] += parseInt(c);
+    });
+  });
+  return countOfOnes.map((c) => (c < input.length / 2 ? "0" : "1"));
+};
+
+export const part1 = async (): Promise<string> => {
+  const input = await readInput(__dirname);
+
+  const gammaBits = findMostCommonBits(input);
+  const gamma = parseInt(gammaBits.join(""), 2);
+
+  // We can calculate epsilon the same way, but we can also calculate it directly from gamma
+  // Since all the bits will be flipped, gamma + epsilon = 2^n - 1, where n is in the number of bits
+  const epsilon = 2 ** gammaBits.length - 1 - gamma;
+  return (gamma * epsilon).toString();
+};
 
 // Helper function to filter values based on a compare function
 const filterValues = (
@@ -13,7 +38,7 @@ const filterValues = (
   return parseInt(values[0], 2);
 };
 
-export const solve = async (): Promise<string> => {
+export const part2 = async (): Promise<string> => {
   const input = await readInput(__dirname);
 
   // For oxygen generator rating,

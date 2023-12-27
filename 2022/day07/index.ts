@@ -1,4 +1,5 @@
 import path from "path";
+import { readInput } from "../../utils";
 
 type DirSizes = { [key: string]: number };
 
@@ -21,7 +22,7 @@ const updateSizes = (sizes: DirSizes, cwd: string, size: number) => {
   }
 };
 
-export const loadSizes = (input: string[]) => {
+const loadSizes = (input: string[]) => {
   const sizes: DirSizes = {};
   let cwd = "";
 
@@ -40,4 +41,22 @@ export const loadSizes = (input: string[]) => {
     }
   });
   return sizes;
+};
+
+export const part1 = async (): Promise<string> => {
+  const input = await readInput(__dirname);
+  const dirs = loadSizes(input);
+  return Object.values(dirs)
+    .filter((size) => size <= 100000)
+    .reduce((sum, cur) => sum + cur, 0)
+    .toString();
+};
+
+export const part2 = async (): Promise<string> => {
+  const input = await readInput(__dirname);
+  const dirs = loadSizes(input);
+  const sizeToRecover = 30000000 - 70000000 + dirs["/"];
+  return Math.min(
+    ...Object.values(dirs).filter((size) => size >= sizeToRecover)
+  ).toString();
 };
