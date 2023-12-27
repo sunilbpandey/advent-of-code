@@ -13,6 +13,8 @@ const solutions = [
   { day: 5, part: 2, solution: "15463" },
   { day: 6, part: 1, solution: "390011" },
   { day: 6, part: 2, solution: "1746710169834" },
+  { day: 7, part: 1, solution: "355150" },
+  { day: 7, part: 2, solution: "98368490" },
 ];
 
 describe("Advent of Code 2021", () => {
