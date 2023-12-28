@@ -36,6 +36,8 @@ const solutions = [
 ▊  ▊ ▊  ▊ ▊  ▊ ▊  ▊ ▊    ▊  ▊ ▊ ▊  ▊  ▊
  ▊▊   ▊▊  ▊  ▊ ▊  ▊ ▊▊▊▊ ▊  ▊ ▊  ▊  ▊▊`,
   },
+  { day: 14, part: 1, solution: "2874" },
+  { day: 14, part: 2, solution: "5208377027195" },
 ];
 
 describe("Advent of Code 2021", () => {
