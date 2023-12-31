@@ -25,8 +25,9 @@ These are my solutions to [Advent of Code](https://adventofcode.com) problems.
 | 14  | [⭑⭑](2021/day14) |                  | [⭑⭑](2023/day14) |
 | 15  | [⭑⭑](2021/day15) |                  | [⭑⭑](2023/day15) |
 | 16  | [⭑⭑](2021/day16) |                  | [⭑⭑](2023/day16) |
+| 17  | [⭑⭑](2021/day17) |                  |                  |
 | 18  |                  |                  | [⭑⭑](2023/day18) |
-| 21  |                  |                  | [⭑ ](2023/day21) |
+| 21  | [⭑ ](2021/day21) |                  | [⭑ ](2023/day21) |
 
 ## Usage
 
