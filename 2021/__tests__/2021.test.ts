@@ -45,6 +45,7 @@ const solutions = [
   { day: 17, part: 1, solution: "7750" },
   { day: 17, part: 2, solution: "4120" },
   { day: 21, part: 1, solution: "675024" },
+  { day: 25, part: 1, solution: "386" },
 ];
 
 describe("Advent of Code 2021", () => {
